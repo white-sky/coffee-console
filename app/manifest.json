@@ -1,0 +1,36 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.0.30",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus"
+  ],
+  "devtools_page": "popup.html",
+  "commands": {
+    "toggle-feature": {
+      "suggested-key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Send a 'toggle-feature' event to the extension"
+    },
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      }
+    }
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/chromereload.js",
+      "scripts/background.js"
+    ]
+  }
+}

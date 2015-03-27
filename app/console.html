@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+<!--
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="text/javascript" src="assets/js/coffee-script.js"></script>
+-->
+
+  <style>
+    #editor {
+      position: fixed;
+      top: 40px;
+      bottom: 0;
+      right: 50%;
+      left: 0;
+      z-index: 1;
+      font-size: 10pt;
+    }
+    #destination {
+      position: fixed;
+      top: 40px;
+      bottom: 0;
+      right: 0;
+      left: 50%;
+      z-index: 1;
+      font-size: 10pt;
+    }
+    #run {
+      position: fixed;
+      right: 10px;
+      bottom: 5px;
+      z-index: 3;
+    }
+    #error {
+      margin-top:20px;
+      padding: 8px 60px 8px 15px;
+    }
+    .row {
+      padding-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-4">
+      <div id="selectors">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <select id="themes" class="form-control">
+              <option value="ambiance">Ambiance</option>
+              <option value="chaos">Chaos</option>
+              <option value="chrome">Chrome</option>
+              <option value="cloud9_day">Cloud9 Day</option>
+              <option value="cloud9_night">Cloud9 Night</option>
+              <option value="cloud9_night_low_color">Cloud9 Night(low color)</option>
+              <option value="clouds">Clouds</option>
+              <option value="clouds_midnight">Clouds Midnight</option>
+              <option value="cobalt">Cobalt</option>
+              <option value="crimson_editor">Crimson Editor</option>
+              <option value="dawn">Dawn</option>
+              <option value="dreamweaver">Dreamweaver</option>
+              <option value="eclipse">Eclipse</option>
+              <option value="github">Github</option>
+              <option value="idle_fingers">Idle Fingers</option>
+              <option value="katzenmilch">Katzenmilch</option>
+              <option value="kuroir">Kuroir</option>
+              <option value="merbivore">Merbivore</option>
+              <option value="merbivore_soft">Merbivore Soft</option>
+              <option value="mono_industrial">Mono Industrial</option>
+              <option value="monokai" selected>Monokai</option>
+              <option value="pastel_on_dark">Pastel on Dark</option>
+              <option value="solarized_dark">Solarized Dark</option>
+              <option value="solarized_light">Solarized Light</option>
+              <option value="terminal">Terminal</option>
+              <option value="textmate">Textmate</option>
+              <option value="tomorrow">tomorrow</option>
+              <option value="tomorrow_night">Tomorrow Night</option>
+              <option value="tomorrow_night_blue">Tomorrow Night Blue</option>
+              <option value="tomorrow_night_bright">Tomorrow Night Bright</option>
+              <option value="tomorrow_night_eighties">Tomorrow Night Eighties</option>
+              <option value="twilight">Twilight</option>
+              <option value="vibrant_ink">Vibrant Ink</option>
+              <option value="Xcode">Xcode</option>
+
+            </select>
+          </div>
+          <div class="form-group">
+            <select id="source" class="form-control">
+              <option value="coffee-script.js" selected>Alubbe</option>
+              <option value="default.js">Default</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <label for="bare"><input type="checkbox" id="bare" checked/> Bare</label>
+          </div>
+          <div class="checkbox">
+            <label for="header"><input type="checkbox" id="header" checked/> Header</label>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+      <span class="alert alert-danger hide" id="error"></span>
+    </div>
+  </div>
+  <div id="editor">
+    generatorFn = ->*
+      yield yourMom()
+    yield generatorFn()
+  </div>
+  <div id="destination"></div>
+  <button id="run" type="button" class="btn btn-success">Run</button>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/coffee-script/extras/coffee-script.js"></script>
+  <!-- endbower -->
+  <script src="bower_components/ace-builds/src/ace.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="bower_components/ace-builds/src/mode-coffee.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="bower_components/ace-builds/src/mode-javascript.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="bower_components/ace-builds/src/theme-monokai.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="scripts/console.js" type="text/javascript" charset="UTF-8"></script>
+  <!-- endbuild -->
+
+</body>
+</html>

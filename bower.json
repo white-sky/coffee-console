@@ -1,0 +1,11 @@
+{
+  "name": "coffeecon",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "coffee-script": "~1.9.1",
+    "ace": "~1.1.8",
+    "requirejs": "~2.1.16"
+  },
+  "devDependencies": {}
+}

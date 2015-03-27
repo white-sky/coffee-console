@@ -1,4 +1,5 @@
 {
+  "evil": true,
   "node": true,
   "browser": true,
   "esnext": true,
@@ -21,6 +22,8 @@
   "smarttabs": true,
   "globals" : {
     "chrome": true,
-    "crypto": true
+    "crypto": true,
+    "ace": true,
+    "CoffeeScript": true
   }
 }

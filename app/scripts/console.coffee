@@ -1,4 +1,4 @@
-window.require = ace.require
+'use strict'
 
 theme = undefined
 source = undefined
@@ -27,8 +27,6 @@ destination = ace.edit 'destination'
 destination.setReadOnly true
 destination.setTheme 'ace/theme/monokai'
 destination.getSession().setMode 'ace/mode/javascript'
-
-'use strict'
 
 change = ->
   compiledSource = undefined
@@ -63,6 +61,7 @@ changeSource = (e) ->
   return
 
 evalCode = (e) ->
+  # jshint evil:true
   e.preventDefault()
   chrome.devtools.inspectedWindow.eval destination.session.getValue(), (result, isException) ->
     if (typeof isException isnt "undefined" and isException isnt null) and ((if typeof isException isnt "undefined" and isException isnt null then isException.isException else undefined)) is true
@@ -78,6 +77,6 @@ theme.onchange = changeTheme
 source.onchange = changeSource
 bare.onchange = change
 header.onchange = change
-
 editor.on "change", change
+
 run.addEventListener "click", evalCode

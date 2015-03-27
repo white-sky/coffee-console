@@ -22,7 +22,7 @@ header = document.getElementById 'header'
 
 editor = ace.edit 'editor'
 editor.setTheme 'ace/theme/monokai'
-editor.getSession().setMode "ace/theme/coffee"
+editor.getSession().setMode "ace/mode/coffee"
 destination = ace.edit 'destination'
 destination.setReadOnly true
 destination.setTheme 'ace/theme/monokai'
@@ -62,7 +62,9 @@ changeSource = (e) ->
 
 evalCode = (e) ->
   # jshint evil:true
-  e.preventDefault()
+  do e.preventDefault
+  return unless chrome.devtools?
+
   chrome.devtools.inspectedWindow.eval destination.session.getValue(), (result, isException) ->
     if (typeof isException isnt "undefined" and isException isnt null) and ((if typeof isException isnt "undefined" and isException isnt null then isException.isException else undefined)) is true
       error.classList.remove "hide"

@@ -4,7 +4,6 @@
   "dependencies": {
     "bootstrap": "~3.3.4",
     "coffee-script": "~1.9.1",
-    "requirejs": "~2.1.16",
     "ace-builds": "~1.1.8"
   },
   "devDependencies": {}

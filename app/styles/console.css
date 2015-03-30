@@ -1,0 +1,31 @@
+#editor {
+  position: fixed;
+  top: 40px;
+  bottom: 0;
+  right: 50%;
+  left: 0;
+  z-index: 1;
+  font-size: 10pt;
+}
+#destination {
+  position: fixed;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  z-index: 1;
+  font-size: 10pt;
+}
+#run {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+  z-index: 3;
+}
+#error {
+  margin-top:20px;
+  padding: 8px 60px 8px 15px;
+}
+.row {
+  padding-top: 2px;
+}

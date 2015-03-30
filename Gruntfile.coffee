@@ -81,7 +81,12 @@ module.exports = (grunt) ->
 
     # Empties folders to start fresh
     clean:
-      chrome: {}
+      chrome:
+        files: [
+          src: [
+            "<%= config.app %>/scripts/**/*.js"
+          ]
+        ]
       dist:
         files: [
           dot: true
@@ -331,7 +336,8 @@ module.exports = (grunt) ->
 
   grunt.registerTask "default", [
     'coffeelint'
-    "jshint"
+    # 'coffee'
+    # "jshint"
     "test"
     "build"
   ]

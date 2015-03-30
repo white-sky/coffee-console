@@ -2,51 +2,14 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
-
-<!--
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script type="text/javascript" src="assets/js/coffee-script.js"></script>
--->
-
-  <style>
-    #editor {
-      position: fixed;
-      top: 40px;
-      bottom: 0;
-      right: 50%;
-      left: 0;
-      z-index: 1;
-      font-size: 10pt;
-    }
-    #destination {
-      position: fixed;
-      top: 40px;
-      bottom: 0;
-      right: 0;
-      left: 50%;
-      z-index: 1;
-      font-size: 10pt;
-    }
-    #run {
-      position: fixed;
-      right: 10px;
-      bottom: 5px;
-      z-index: 3;
-    }
-    #error {
-      margin-top:20px;
-      padding: 8px 60px 8px 15px;
-    }
-    .row {
-      padding-top: 2px;
-    }
-  </style>
+  <!-- build:css styles/console.css -->
+  <link href="styles/console.css" rel="stylesheet">
+  <!-- endbuild -->
 </head>
 <body>
   <div class="row">
@@ -58,9 +21,6 @@
               <option value="ambiance">Ambiance</option>
               <option value="chaos">Chaos</option>
               <option value="chrome">Chrome</option>
-              <option value="cloud9_day">Cloud9 Day</option>
-              <option value="cloud9_night">Cloud9 Night</option>
-              <option value="cloud9_night_low_color">Cloud9 Night(low color)</option>
               <option value="clouds">Clouds</option>
               <option value="clouds_midnight">Clouds Midnight</option>
               <option value="cobalt">Cobalt</option>
@@ -88,23 +48,17 @@
               <option value="tomorrow_night_eighties">Tomorrow Night Eighties</option>
               <option value="twilight">Twilight</option>
               <option value="vibrant_ink">Vibrant Ink</option>
-              <option value="Xcode">Xcode</option>
-
+              <option value="xcode">Xcode</option>
             </select>
-          </div>
-          <div class="form-group">
-            <select id="source" class="form-control">
-              <option value="coffee-script.js" selected>Alubbe</option>
-              <option value="default.js">Default</option>
-            </select>
-          </div>
-          <div class="checkbox">
-            <label for="bare"><input type="checkbox" id="bare" checked/> Bare</label>
-          </div>
-          <div class="checkbox">
-            <label for="header"><input type="checkbox" id="header" checked/> Header</label>
-          </div>
 
+            <div class="checkbox">
+              <label for="bare"><input type="checkbox" id="bare" checked/> Bare</label>
+            </div>
+            <div class="checkbox">
+              <label for="header"><input type="checkbox" id="header" checked/> Header</label>
+            </div>
+
+          </div>
         </form>
       </div>
     </div>
@@ -112,11 +66,7 @@
       <span class="alert alert-danger hide" id="error"></span>
     </div>
   </div>
-  <div id="editor">
-    generatorFn = ->*
-      yield yourMom()
-    yield generatorFn()
-  </div>
+  <div id="editor"></div>
   <div id="destination"></div>
   <button id="run" type="button" class="btn btn-success">Run</button>
 
